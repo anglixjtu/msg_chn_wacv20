@@ -1,6 +1,6 @@
 {
     "train_batch_sz": 16,
-    "loss": "MSELoss",
+    "loss": "L2Loss",
     "optimizer": "Adam",
     "lr": 0.001,
     "weight_decay": 0.0002,
