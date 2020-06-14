@@ -26,7 +26,10 @@ The implementation of our network is in 'network.py'. It takes the sparse depth 
 ※NOTE: We recently improve the accuracy by adding the skip connections between the depth encoders and the depth decoders at the previous stage. This vision of network has 32 channels rather than 64 channels in our paper. The 32-channel network performs similarly on the test set with the 64-channel network in our paper, but has a much smaller number of parameters and a shorter run time. You can find more details in [Results](#results)
 
 ## Training
-We adopt a multi-stage scheme during the training process. You can implement the training processing as
+We train our model on KITTI training set, without pretraining on other dataset. 
+Random cropping and left-right-flipping are performed as data augmentation. The training maps are cropped to a
+resolution of 1216×352. 
+We adopt a multi-stage scheme during the training process. You can implement the training process as
 
 ```python
 loss14 = L2Loss(output_d14, label)
@@ -41,6 +44,13 @@ else:
    loss = loss11
 
 ```
+Loss drops very little after 20 epochs. We trained 29 epoches to get the final model.
 More training configurations are given in 'params.json'.
 
 ## Results
+The performance of our network is given in the table.
+
+|        |  RMSE |  MAE |  iRMSE  | iMAE  | #Params |
+|--------|-------|-------|-------|-------|-------|
+|validation|817.08|224.83|2.48|0.99|364K|
+|test|783.49|226.91|2.35|1.01|364K|
