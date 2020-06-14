@@ -6,4 +6,6 @@ high-resolution image, is essential to many computer vision applications. Most p
 for all the hourglasses. A multi-scale training strategy further activates the effect of cascade stages. With the role of
 each sub-module divided explicitly, we can implement components with simple architectures. Extensive experiments show that our lightweight model achieves competitive results compared with state-of-the-art in KITTI depth completion benchmark, with low complexity in run-time.
 
-![demo](https://github.com/anglixjtu/msg_chn_wacv20/blob/master/demo/video5.gif)
+<p align="center">
+  <img src="https://github.com/anglixjtu/msg_chn_wacv20/blob/master/demo/video5.gif" alt="photo not available" height="50%">
+</p>
