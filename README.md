@@ -23,8 +23,24 @@ The implementation of our network is in 'network.py'. It takes the sparse depth 
     Outputs: output_d11， output_d12， output_d14
              # outputs from the last, the second, and the first sub-network
 
-※NOTE: We recently improve the accuracy by adding the skip connections between the depth encoders and the depth decoders at the previous stage. This vision of network has 32 channels rather than 64 channels in our paper. The 32-channel network performs similarly on the test test, but has a much smaller number of parameters and a shorter run time. You can find more details in [Results](#results)
+※NOTE: We recently improve the accuracy by adding the skip connections between the depth encoders and the depth decoders at the previous stage. This vision of network has 32 channels rather than 64 channels in our paper. The 32-channel network performs similarly on the test set with the 64-channel network in our paper, but has a much smaller number of parameters and a shorter run time. You can find more details in [Results](#results)
 
 ## Training
+We adopt a multi-stage scheme during the training process. You can implement the training processing as
+
+```python
+loss14 = L2Loss(output_d14, label)
+loss12 = L2Loss(output_d12, label)
+loss11 = L2Loss(output_d11, label)
+
+if epoch < 6:
+   loss = loss14 + loss12 + loss11
+elif epoch < 11:
+   loss = 0.1 * loss14 + 0.1 * loss12 + loss11
+else:
+   loss = loss11
+
+```
+More training configurations are given in 'params.json'.
 
 ## Results
