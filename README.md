@@ -17,13 +17,13 @@ each sub-module divided explicitly, we can implement components with simple arch
 - Pytorch 1.1.0
 
 ## Network
-The implementation of our network is in 'network.py'. It takes the sparse depth and the rgb image (normalized to 0~1) as inputs， outputs the predictions from the last, the second, and the first sub-network in sequence. The output from the last network ('output_d11') is used for final test.
+The implementation of our network is in 'network.py'. It takes the sparse depth and the rgb image (normalized to 0~1) as inputs， outputs the predictions from the last, the second, and the first sub-network in sequence. The output from the last network ('output_d11') is used for the final test.
 
     Inputs: input_d, input_rgb
     Outputs: output_d11， output_d12， output_d14
              # outputs from the last, the second, and the first sub-network
 
-※NOTE: We recently improve the accuracy by adding the skip connections between the depth encoders and the depth decoders at the previous stage. This vision of network has 32 channels rather than 64 channels in our paper. The 32-channel network performs similarly on the test set with the 64-channel network in our paper, but has a much smaller number of parameters and a shorter run time. You can find more details in [Results](#results)
+※NOTE: We recently modify the architecture by adding the skip connections between the depth encoders and the depth decoders at the previous stage. This vision of network has 32 channels rather than 64 channels in our paper. The 32-channel network performs similarly to the 64-channel network in our paper on the test set, but has a much smaller number of parameters and a shorter run time. You can find more details in [Results](#results)
 
 ## Training
 We train our model on KITTI training set, without pretraining on other dataset. 
@@ -54,3 +54,18 @@ The performance of our network is given in the table.
 |--------|-------|-------|-------|-------|-------|
 |validation|817.08|224.83|2.48|0.99|364K|
 |test|783.49|226.91|2.35|1.01|364K|
+
+You can find our final model and the test results on KITTI data set [here](https://drive.google.com/drive/folders/1botFS752LSEq5NIv0enH2Nh65coil3p5?usp=sharing).
+
+## Citation 
+If you use our code or method in your work, please cite the following:
+```
+@inproceedings{li2020multi,
+  title={A Multi-Scale Guided Cascade Hourglass Network for Depth Completion},
+  author={Li, Ang and Yuan, Zejian and Ling, Yonggen and Chi, Wanchao and Zhang, Chong and others},
+  booktitle={The IEEE Winter Conference on Applications of Computer Vision},
+  pages={32--40},
+  year={2020}
+}
+```
+Please direct any questions to Ang Li at angli522@foxmail.com.
