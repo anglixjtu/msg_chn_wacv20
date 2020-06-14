@@ -1,0 +1,10 @@
+{
+    "train_batch_sz": 16,
+    "loss": "MSELoss",
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0002,
+    "lr_decay": 0.5,
+    "lr_decay_step": 5,
+    "num_epochs": 50,
+}
