@@ -16,4 +16,15 @@ each sub-module divided explicitly, we can implement components with simple arch
 - Python 3.5
 - Pytorch 1.1.0
 
+## Network
+The implementation of our network is in 'network.py'. It takes the sparse depth and the rgb image (normalized to 0~1) as inputs， outputs the predictions from the last, the second, and the first sub-network in sequence. The output from the last network ('output_d11') is used for final test.
+
+    Inputs: input_d, input_rgb
+    Outputs: output_d11， output_d12， output_d14
+             # outputs from the last, the second, and the first sub-network
+
+※NOTE: We recently improve the accuracy by adding the skip connections between the depth encoders and the depth decoders at the previous stage. This vision of network has 32 channels rather than 64 channels in our paper. The 32-channel network performs similarly on the test test, but has a much smaller number of parameters and a shorter run time. You can find more details in [Results](#results)
+
 ## Training
+
+## Results
