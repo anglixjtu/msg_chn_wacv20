@@ -52,11 +52,11 @@ class DepthEncoder(nn.Module):
             x0 = x0 + F.interpolate(pre_x4, scale_factor=scale, mode='bilinear', align_corners=True)
 
         x1 = self.enc1(x0) #1/2 input size
-        if pre_x3 is not None:
+        if pre_x3 is not None: # newly added skip connection
             x1 = x1 + F.interpolate(pre_x3, scale_factor=scale, mode='bilinear', align_corners=True)
-
+        
         x2 = self.enc2(x1) # 1/4 input size
-        if pre_x2 is not None:
+        if pre_x2 is not None: # newly added skip connection
             x2 = x2 + F.interpolate(pre_x2, scale_factor=scale, mode='bilinear', align_corners=True)
 
         return x0, x1, x2
