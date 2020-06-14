@@ -5,3 +5,5 @@ Depth completion, a task to estimate the dense depth map from sparse measurement
 high-resolution image, is essential to many computer vision applications. Most previous methods building on fully convolutional networks can not handle diverse patterns in the depth map efficiently and effectively. We propose a multi-scale guided cascade hourglass network to tackle this problem. Structures at different levels are captured by specialized hourglasses in the cascade network with sparse inputs in various sizes. An encoder extracts multiscale features from color image to provide deep guidance
 for all the hourglasses. A multi-scale training strategy further activates the effect of cascade stages. With the role of
 each sub-module divided explicitly, we can implement components with simple architectures. Extensive experiments show that our lightweight model achieves competitive results compared with state-of-the-art in KITTI depth completion benchmark, with low complexity in run-time.
+
+![demo](https://github.com/anglixjtu/msg_chn_wacv20/blob/master/demo/video5.gif)
