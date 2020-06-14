@@ -1,5 +1,5 @@
 # msg_chn_wacv20
-This repository contains the network configurations (in PyTorch) of our paper "[A Multi-Scale Guided Cascade Hourglass Network for Depth Completion](http://openaccess.thecvf.com/content_WACV_2020/papers/Li_A_Multi-Scale_Guided_Cascade_Hourglass_Network_for_Depth_Completion_WACV_2020_paper.pdf)" by Ang Li, Zejian Yuan, Yonggen Ling, Wanchao Chi, Shenghao Zhang and Chong Zhang.
+This repository contains the network configurations (in PyTorch) of our paper "[A Multi-Scale Guided Cascade Hourglass Network for Depth Completion](http://openaccess.thecvf.com/content_WACV_2020/papers/Li_A_Multi-Scale_Guided_Cascade_Hourglass_Network_for_Depth_Completion_WACV_2020_paper.pdf)" by Ang Li, Zejian Yuan, Yonggen Ling, Wanchao Chi, Shenghao Zhang，and Chong Zhang.
 
 ## Introduction
 Depth completion, a task to estimate the dense depth map from sparse measurement under the guidance from the
@@ -26,7 +26,7 @@ The implementation of our network is in 'network.py'. It takes the sparse depth 
 ※NOTE: We recently modify the architecture by adding the skip connections between the depth encoders and the depth decoders at the previous stage. This vision of network has 32 channels rather than 64 channels in our paper. The 32-channel network performs similarly to the 64-channel network in our paper on the test set, but has a much smaller number of parameters and a shorter run time. You can find more details in [Results](#results)
 
 ## Training
-We train our model on KITTI training set, without pretraining on other dataset. 
+We train our model on KITTI training set, without pre-training on other dataset. To further improve the accuracy，you might consider pre-training with other datasets like Virtual KITTI. 
 Random cropping and left-right-flipping are performed as data augmentation. The training maps are cropped to a
 resolution of 1216×352. 
 We adopt a multi-stage scheme during the training process. You can implement the training process as
