@@ -17,7 +17,7 @@ each sub-module divided explicitly, we can implement components with simple arch
 - Pytorch 1.1.0
 
 ## Network
-The implementation of our network is in ```network.py```. It takes the sparse depth and the rgb image (normalized to 0~1) as inputs， outputs the predictions from the last, the second, and the first sub-network in sequence. The output from the last network ('output_d11') is used for the final test.
+The implementation of our network is in ```network.py```. It takes the sparse depth and the rgb image (normalized to 0~1) as inputs， outputs the predictions from the last, the second, and the first sub-network in sequence. The output from the last network (```output_d11```) is used for the final test.
 
     Inputs: input_d, input_rgb
     Outputs: output_d11， output_d12， output_d14
@@ -45,7 +45,7 @@ else:
 
 ```
 Loss drops very little after 20 epochs. We trained 29 epoches to get the final model.
-More training configurations are given in 'params.json'.
+More training configurations are given in ```params.json```.
 
 ## Results
 The performance of our network is given in the table.
