@@ -26,7 +26,7 @@ The implementation of our network is in ```network.py```. It takes the sparse de
 ※NOTE: We recently modify the architecture by adding the skip connections between the depth encoders and the depth decoders at the previous stage. This vision of network has 32 channels rather than 64 channels in our paper. The 32-channel network performs similarly to the 64-channel network in our paper on the test set, but has a much smaller number of parameters and a shorter run time. You can find more details in [Results](#results)
 
 ## Training
-- We train our model on KITTI training set, without pre-training on other dataset. To further improve the accuracy，you might consider pre-training with other datasets like Virtual KITTI. 
+- We train our model on KITTI training set, without pre-training on other dataset. To further improve the accuracy，you might consider pre-training with other datasets like Cityscapes or Virtual KITTI. 
 - Random cropping and left-right-flipping are performed as data augmentation. The training maps are cropped to a
 resolution of 1216×352. 
 - We adopt a multi-stage scheme during the training process. You can implement the training process as
