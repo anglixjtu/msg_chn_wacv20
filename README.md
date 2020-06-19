@@ -48,11 +48,12 @@ Loss drops very little after 20 epochs. We trained 29 epoches to get the final m
 More training configurations are given in ```params.json```.
 
 ## Results
-The performance of our network is given in the table. We validate our model with 1000 selected depth data (```val_selection_cropped``` ) in KITT dataset. 
+The performance of our network is given in the table. We validate our model with both the validation dataset (```val```) and the selected depth data (```val_selection_cropped``` ) in KITT dataset. 
 
 |        |  RMSE |  MAE |  iRMSE  | iMAE  | #Params |
 |--------|-------|-------|-------|-------|-------|
-|validation|817.08|224.83|2.48|0.99|364K|
+|validation|821.94|227.94|2.47|0.98|364K|
+|selected validation|817.08|224.83|2.48|0.99|364K|
 |test|783.49|226.91|2.35|1.01|364K|
 
 You can find our final model and the test results on KITTI data set [here](https://drive.google.com/drive/folders/1botFS752LSEq5NIv0enH2Nh65coil3p5?usp=sharing).
