@@ -48,7 +48,7 @@ Loss drops very little after 20 epochs. We trained 29 epoches to get the final m
 More training configurations are given in ```params.json```.
 
 ## Results
-The performance of our network is given in the table.
+The performance of our network is given in the table. We validate our model with 1000 selected depth data (```val_selection_cropped``` ) in KITT dataset. 
 
 |        |  RMSE |  MAE |  iRMSE  | iMAE  | #Params |
 |--------|-------|-------|-------|-------|-------|
