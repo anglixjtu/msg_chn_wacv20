@@ -25,7 +25,8 @@ The implementation of our network is in ```network.py```. It takes the sparse de
 
 ※NOTE: We recently modify the architecture by adding the skip connections between the depth encoders and the depth decoders at the previous stage. This vision of network has 32 channels rather than 64 channels in our paper. The 32-channel network performs similarly to the 64-channel network in our paper on the test set, but has a much smaller number of parameters and a shorter run time. You can find more details in [Results](#results)
 
-## Training
+## Training and Evaluation
+- We use an elegant framework written by Abdelrahman Eldesokey to train and evaluate our model. Find more details from [here](https://github.com/abdo-eldesokey/nconv).
 - We train our model on KITTI training set, without pre-training on other dataset. To further improve the accuracy，you might consider pre-training with other datasets like Virtual KITTI. 
 - Random cropping and left-right-flipping are performed as data augmentation. The training maps are cropped to a
 resolution of 1216×352. 
