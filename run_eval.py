@@ -46,7 +46,7 @@ parser.add_argument('-mode', action='store', dest='mode', default='eval', help='
 parser.add_argument('-exp', action='store', dest='exp', default='exp_msg_chn',
                     help='Experiment name as in workspace directory')
 #parser.add_argument('-chkpt', action='store', dest='chkpt', default=50,  nargs='?',   # None or number
-parser.add_argument('-chkpt', action='store', dest='chkpt', default="/PATH/TO/YOUT/CHECKPOINT_FILE.pth.tar",
+parser.add_argument('-chkpt', action='store', dest='chkpt', default="/PATH/TO/YOUR/CHECKPOINT_FILE.pth.tar",
                     help='Checkpoint number to load')
 
 parser.add_argument('-set', action='store', dest='set', default='selval', type=str, nargs='?',
