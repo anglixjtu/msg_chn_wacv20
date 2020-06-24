@@ -45,7 +45,7 @@ else:
    loss = loss11
 
 ```
-Loss drops very little after 20 epochs. We trained 29 epoches to get the final model.
+Loss drops very little after 20 epochs. We trained 28 epoches to get the final model.
 More training configurations are given in ```params.json```.
 
 ## Results
