@@ -134,7 +134,7 @@ class KittiDepthTrainer(Trainer):
                 labels = labels.to(device)
                 inputs_rgb = inputs_rgb.to(device)
 
-                outputs = self.net(inputs_d, inputs_rgb, C)
+                outputs = self.net(inputs_d, inputs_rgb)
                 # Calculate loss for valid pixel in the ground truth
                 loss11 = self.objective(outputs[0], labels)
                 loss12 = self.objective(outputs[1], labels)
