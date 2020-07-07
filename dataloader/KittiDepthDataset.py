@@ -101,8 +101,7 @@ class KittiDepthDataset(Dataset):
             data_path = str(self.data[item])
             idx = data_path.find('velodyne_raw')
             fname = data_path[idx + 12:]
-            idx2 = fname.find('test')
-            rgb_path = data_path[:idx] + 'image/' + fname[idx2 + 4:]
+            rgb_path = data_path[:idx] + 'image/' + fname
             rgb = Image.open(rgb_path)
 
 
