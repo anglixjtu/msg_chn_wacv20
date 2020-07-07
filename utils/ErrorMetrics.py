@@ -46,7 +46,7 @@ class MAE(nn.Module):
         err = torch.abs(target * val_pixels - outputs * val_pixels)
         loss = torch.sum(err.view(err.size(0), 1, -1), -1, keepdim=True)
         cnt = torch.sum(val_pixels.view(val_pixels.size(0), 1, -1), -1, keepdim=True)
-        return torch.mean(loss / cnt)
+        return torch.mean(loss / cnt) * 1000
 
 class RMSE(nn.Module):
     def __init__(self):
@@ -58,7 +58,7 @@ class RMSE(nn.Module):
         loss = torch.sum(err.view(err.size(0), 1, -1), -1, keepdim=True)
         cnt = torch.sum(val_pixels.view(val_pixels.size(0), 1, -1), -1, keepdim=True)
         #return torch.sqrt(torch.mean(loss / cnt))
-        return torch.mean(torch.sqrt(loss / cnt))
+        return torch.mean(torch.sqrt(loss / cnt))  * 1000
 
 class iRMSE(nn.Module):
     def __init__(self):
