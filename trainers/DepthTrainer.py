@@ -218,6 +218,7 @@ class KittiDepthTrainer(Trainer):
                 Start_time = time.time()
                 for data in self.dataloaders[s]:
 
+                    torch.cuda.synchronize()
                     start_time = time.time()
 
                     inputs_d, C, labels, item_idxs, inputs_rgb = data
@@ -232,6 +233,7 @@ class KittiDepthTrainer(Trainer):
                     if len(outputs) > 1:
                         outputs = outputs[0]
 
+                    torch.cuda.synchronize()
                     duration = time.time() - start_time
                     times.update(duration / inputs_d.size(0), inputs_d.size(0))
 
