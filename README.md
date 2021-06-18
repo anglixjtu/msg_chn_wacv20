@@ -8,7 +8,7 @@ for all the hourglasses. A multi-scale training strategy further activates the e
 each sub-module divided explicitly, we can implement components with simple architectures. Extensive experiments show that our lightweight model achieves competitive results compared with state-of-the-art in KITTI depth completion benchmark, with low complexity in run-time.
 
 <p align="center">
-  <img src="https://github.com/anglixjtu/msg_chn_wacv20/blob/master/demo/video5.gif" alt="photo not available" height="50%">
+  <img src="./demo/video5.gif" alt="photo not available" height="50%">
 </p>
 
 
